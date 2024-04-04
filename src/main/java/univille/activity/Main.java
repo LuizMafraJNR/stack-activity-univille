@@ -2,6 +2,9 @@ package univille.activity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Scanner;
+
 import univille.activity.domain.model.Student;
 import univille.activity.stack.Stack;
 
@@ -9,21 +12,31 @@ public class Main
 {
 	public static void main(String[] args)
 	{
+		Scanner scanner = new Scanner(System.in);
 		Stack pe1 = new Stack(20);
 		Stack pe2 = new Stack(20);
 
 		// TODO - Aqui os estudantes deve ser inseridos por Scanner.
 		//  Fazer um IF para se caso for M adicionar na pe1 e F na p2
 
-		for (Student student : getStudentsF())
-		{
-			pe1.push(student);
-		}
+		String stop = "n";
+		do {
+			System.out.println("Enter the student name: ");
+			String name = scanner.next();
+			System.out.println("Enter the student registration: ");
+			int registration = scanner.nextInt();
+			System.out.println("Enter the student gender: ");
+			char gender = String.valueOf(scanner.next().charAt(0)).toUpperCase().charAt(0);
+			System.out.println("Do you want stop? (s/n)");
+			stop = scanner.next();
 
-		for (Student student : getStudentsM())
-		{
-			pe2.push(student);
-		}
+			if (gender == 'M' || gender == 'm')
+			{
+				pe1.push(new Student(name, registration,gender));
+			} else {
+				pe2.push(new Student(name, registration,gender));
+			}
+		} while(stop.equalsIgnoreCase("n"));
 
 		while (!pe1.isEmpty())
 		{
