@@ -9,11 +9,11 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		System.out.println("Hello world!");
-
-
 		Stack pe1 = new Stack(20);
 		Stack pe2 = new Stack(20);
+
+		// TODO - Aqui os estudantes deve ser inseridos por Scanner.
+		//  Fazer um IF para se caso for M adicionar na pe1 e F na p2
 
 		for (Student student : getStudentsF())
 		{
@@ -42,6 +42,7 @@ public class Main
 		}
 	}
 
+	// TODO - REMOVE
 	static List<Student> getStudentsM()
 	{
 		List<Student> students = new ArrayList<>();
@@ -70,6 +71,8 @@ public class Main
 		return students;
 	}
 
+
+	// TODO - REMOVE
 	static List<Student> getStudentsF()
 	{
 		List<Student> students = new ArrayList<>();

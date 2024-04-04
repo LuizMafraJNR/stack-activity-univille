@@ -16,8 +16,6 @@ public class Stack implements StackService
 		this.top = -1;
 	}
 
-
-
 	@Override
 	public void push(Student student)
 	{
